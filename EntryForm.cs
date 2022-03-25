@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace RealTimeNoteTaker
 {
-    public partial class Form1 : Form
+    public partial class EntryForm : Form
     {
-        public Form1()
+        public EntryForm()
         {
             InitializeComponent();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
