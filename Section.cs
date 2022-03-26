@@ -30,7 +30,7 @@ namespace RealTimeNoteTaker
             string tabs = "";
             for (int i = 0; i < Level; i++)
             {
-                tabs += "\t";
+                tabs += "    ";
             }
             return $"{tabs}{this.Content}";
         }

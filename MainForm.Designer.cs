@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlListView = new System.Windows.Forms.Panel();
+            this.lvEntries = new System.Windows.Forms.ListView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddSection = new System.Windows.Forms.Button();
             this.btnAddNote = new System.Windows.Forms.Button();
@@ -36,16 +37,17 @@
             this.btnDemote = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnRefreshFile = new System.Windows.Forms.Button();
             this.btnPublish = new System.Windows.Forms.Button();
-            this.lvEntries = new System.Windows.Forms.ListView();
+            this.nudLevel = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.tbFileLocation = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbFileLocation = new System.Windows.Forms.TextBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.pnlFile = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlListView.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.pnlFile.SuspendLayout();
             this.SuspendLayout();
@@ -59,18 +61,31 @@
             this.pnlListView.Size = new System.Drawing.Size(518, 401);
             this.pnlListView.TabIndex = 3;
             // 
+            // lvEntries
+            // 
+            this.lvEntries.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvEntries.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lvEntries.HideSelection = false;
+            this.lvEntries.Location = new System.Drawing.Point(0, 0);
+            this.lvEntries.Name = "lvEntries";
+            this.lvEntries.Size = new System.Drawing.Size(518, 401);
+            this.lvEntries.TabIndex = 0;
+            this.lvEntries.UseCompatibleStateImageBehavior = false;
+            this.lvEntries.View = System.Windows.Forms.View.List;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.btnAddSection, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAddNote, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnPromote, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnDemote, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnEdit, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnDelete, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.btnRefreshFile, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.btnPublish, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.btnDelete, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.btnEdit, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.btnDemote, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnPromote, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.nudLevel, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(388, 70);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -113,7 +128,7 @@
             // btnPromote
             // 
             this.btnPromote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPromote.Location = new System.Drawing.Point(3, 123);
+            this.btnPromote.Location = new System.Drawing.Point(3, 163);
             this.btnPromote.Name = "btnPromote";
             this.btnPromote.Size = new System.Drawing.Size(124, 34);
             this.btnPromote.TabIndex = 2;
@@ -124,7 +139,7 @@
             // btnDemote
             // 
             this.btnDemote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDemote.Location = new System.Drawing.Point(3, 163);
+            this.btnDemote.Location = new System.Drawing.Point(3, 203);
             this.btnDemote.Name = "btnDemote";
             this.btnDemote.Size = new System.Drawing.Size(124, 34);
             this.btnDemote.TabIndex = 3;
@@ -135,7 +150,7 @@
             // btnEdit
             // 
             this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEdit.Location = new System.Drawing.Point(3, 203);
+            this.btnEdit.Location = new System.Drawing.Point(3, 243);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(124, 34);
             this.btnEdit.TabIndex = 4;
@@ -146,24 +161,13 @@
             // btnDelete
             // 
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.Location = new System.Drawing.Point(3, 243);
+            this.btnDelete.Location = new System.Drawing.Point(3, 283);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(124, 34);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnRefreshFile
-            // 
-            this.btnRefreshFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefreshFile.Location = new System.Drawing.Point(3, 323);
-            this.btnRefreshFile.Name = "btnRefreshFile";
-            this.btnRefreshFile.Size = new System.Drawing.Size(124, 34);
-            this.btnRefreshFile.TabIndex = 6;
-            this.btnRefreshFile.Text = "Refresh File";
-            this.btnRefreshFile.UseVisualStyleBackColor = true;
-            this.btnRefreshFile.Click += new System.EventHandler(this.btnRefreshFile_Click);
             // 
             // btnPublish
             // 
@@ -176,15 +180,19 @@
             this.btnPublish.UseVisualStyleBackColor = true;
             this.btnPublish.Click += new System.EventHandler(this.btnPublish_Click);
             // 
-            // lvEntries
+            // nudLevel
             // 
-            this.lvEntries.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvEntries.HideSelection = false;
-            this.lvEntries.Location = new System.Drawing.Point(0, 0);
-            this.lvEntries.Name = "lvEntries";
-            this.lvEntries.Size = new System.Drawing.Size(518, 401);
-            this.lvEntries.TabIndex = 0;
-            this.lvEntries.UseCompatibleStateImageBehavior = false;
+            this.nudLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.nudLevel.Location = new System.Drawing.Point(3, 127);
+            this.nudLevel.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudLevel.Name = "nudLevel";
+            this.nudLevel.Size = new System.Drawing.Size(124, 26);
+            this.nudLevel.TabIndex = 8;
             // 
             // tableLayoutPanel2
             // 
@@ -203,26 +211,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(518, 70);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // btnBrowse
-            // 
-            this.btnBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBrowse.Location = new System.Drawing.Point(391, 33);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(124, 34);
-            this.btnBrowse.TabIndex = 2;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // tbFileLocation
-            // 
-            this.tbFileLocation.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tbFileLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbFileLocation.Location = new System.Drawing.Point(3, 38);
-            this.tbFileLocation.Name = "tbFileLocation";
-            this.tbFileLocation.Size = new System.Drawing.Size(382, 23);
-            this.tbFileLocation.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -234,6 +222,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "File Location";
             // 
+            // tbFileLocation
+            // 
+            this.tbFileLocation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tbFileLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbFileLocation.Location = new System.Drawing.Point(3, 38);
+            this.tbFileLocation.Name = "tbFileLocation";
+            this.tbFileLocation.Size = new System.Drawing.Size(382, 23);
+            this.tbFileLocation.TabIndex = 1;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBrowse.Location = new System.Drawing.Point(391, 33);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(124, 34);
+            this.btnBrowse.TabIndex = 2;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
             // pnlFile
             // 
             this.pnlFile.Controls.Add(this.tableLayoutPanel2);
@@ -242,6 +250,17 @@
             this.pnlFile.Name = "pnlFile";
             this.pnlFile.Size = new System.Drawing.Size(518, 70);
             this.pnlFile.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(9, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Level Indicator";
             // 
             // MainForm
             // 
@@ -255,6 +274,8 @@
             this.Text = "Real Time Note Taker";
             this.pnlListView.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.pnlFile.ResumeLayout(false);
@@ -272,13 +293,14 @@
         private System.Windows.Forms.Button btnDemote;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnRefreshFile;
         private System.Windows.Forms.Button btnPublish;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbFileLocation;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Panel pnlFile;
+        private System.Windows.Forms.NumericUpDown nudLevel;
+        private System.Windows.Forms.Label label2;
     }
 }
 

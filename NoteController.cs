@@ -75,9 +75,15 @@ namespace RealTimeNoteTaker
             }
         }
 
-        public void EditEntry(Entry entry)
+        public void EditEntry(Entry entry, string content)
         {
-
+            foreach (Entry e in Entries)
+            {
+                if (e.Equals(entry))
+                {
+                    e.Content = content;
+                }
+            }
         }
 
         /// <summary>
