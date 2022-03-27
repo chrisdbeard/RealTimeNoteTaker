@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,14 +37,9 @@ namespace RealTimeNoteTaker
             {
                 ListViewItem lvi = new ListViewItem();
                 lvi.Text = e.ToString();
-                lvi.Tag = e;
-
-                if (e is Section)
-                {                   
-                    lvi.Font = new Font(lvEntries.Font, FontStyle.Bold);
-                }
-                
-                lvEntries.Items.Add(lvi);              
+                lvi.Tag = e;                
+                lvEntries.Items.Add(lvi);
+                Console.WriteLine();
             }
         }
 
@@ -71,7 +67,7 @@ namespace RealTimeNoteTaker
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
+        private void btnNewFile_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "rtn files (*.rtn)|*.rtn|All files (*.*)|*.*";
@@ -82,6 +78,25 @@ namespace RealTimeNoteTaker
             {
                 tbFileLocation.Text = sfd.FileName;
                 noteController.SetFilePath(sfd.FileName);
+            }
+
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "rtn files (*.rtn)|*.rtn|All files (*.*)|*.*";
+                ofd.FilterIndex = 1;
+                ofd.RestoreDirectory = true;
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    tbFileLocation.Text = ofd.FileName;
+                    noteController.SetFilePath(ofd.FileName);
+                    noteController.ReadFile(ofd.FileName);
+                    UpdateListView();
+                }
             }
         }
 

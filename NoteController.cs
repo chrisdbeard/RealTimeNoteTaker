@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace RealTimeNoteTaker
 {
@@ -106,9 +107,31 @@ namespace RealTimeNoteTaker
             }
         }
 
-        public void ReadFile()
+        public void ReadFile(string filePath)
         {
+            Regex rx = new Regex(@"[0 - 9]{ 1,2}:[0 - 9]{ 1,2}:[0 - 9]{ 1,2}.[0 - 9]{ 1,3}",
+                RegexOptions.Compiled | RegexOptions.IgnoreCase);
             
+            if (File.Exists(filePath))
+            {
+                this.FilePath = filePath;
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        MatchCollection matches = rx.Matches(line);
+                        if (matches.Count == 0)
+                        {
+                            this.Entries.Add(new Section(line));
+                        }
+                        else
+                        {
+                            this.Entries.Add(new Note(line));
+                        }                       
+                    }
+                }
+            }
         }
 
         /// <summary>

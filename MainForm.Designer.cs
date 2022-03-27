@@ -33,18 +33,19 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddSection = new System.Windows.Forms.Button();
             this.btnAddNote = new System.Windows.Forms.Button();
-            this.btnPromote = new System.Windows.Forms.Button();
-            this.btnDemote = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnPublish = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDemote = new System.Windows.Forms.Button();
+            this.btnPromote = new System.Windows.Forms.Button();
             this.nudLevel = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tbFileLocation = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.pnlFile = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnNewFile = new System.Windows.Forms.Button();
             this.pnlListView.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).BeginInit();
@@ -125,38 +126,16 @@
             this.btnAddNote.UseVisualStyleBackColor = true;
             this.btnAddNote.Click += new System.EventHandler(this.btnAddNote_Click);
             // 
-            // btnPromote
+            // btnPublish
             // 
-            this.btnPromote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPromote.Location = new System.Drawing.Point(3, 163);
-            this.btnPromote.Name = "btnPromote";
-            this.btnPromote.Size = new System.Drawing.Size(124, 34);
-            this.btnPromote.TabIndex = 2;
-            this.btnPromote.Text = "Promote";
-            this.btnPromote.UseVisualStyleBackColor = true;
-            this.btnPromote.Click += new System.EventHandler(this.btnPromote_Click);
-            // 
-            // btnDemote
-            // 
-            this.btnDemote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDemote.Location = new System.Drawing.Point(3, 203);
-            this.btnDemote.Name = "btnDemote";
-            this.btnDemote.Size = new System.Drawing.Size(124, 34);
-            this.btnDemote.TabIndex = 3;
-            this.btnDemote.Text = "Demote";
-            this.btnDemote.UseVisualStyleBackColor = true;
-            this.btnDemote.Click += new System.EventHandler(this.btnDemote_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEdit.Location = new System.Drawing.Point(3, 243);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(124, 34);
-            this.btnEdit.TabIndex = 4;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnPublish.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPublish.Location = new System.Drawing.Point(3, 363);
+            this.btnPublish.Name = "btnPublish";
+            this.btnPublish.Size = new System.Drawing.Size(124, 35);
+            this.btnPublish.TabIndex = 7;
+            this.btnPublish.Text = "Publish";
+            this.btnPublish.UseVisualStyleBackColor = true;
+            this.btnPublish.Click += new System.EventHandler(this.btnPublish_Click);
             // 
             // btnDelete
             // 
@@ -169,16 +148,38 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnPublish
+            // btnEdit
             // 
-            this.btnPublish.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPublish.Location = new System.Drawing.Point(3, 363);
-            this.btnPublish.Name = "btnPublish";
-            this.btnPublish.Size = new System.Drawing.Size(124, 35);
-            this.btnPublish.TabIndex = 7;
-            this.btnPublish.Text = "Publish";
-            this.btnPublish.UseVisualStyleBackColor = true;
-            this.btnPublish.Click += new System.EventHandler(this.btnPublish_Click);
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEdit.Location = new System.Drawing.Point(3, 243);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(124, 34);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDemote
+            // 
+            this.btnDemote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDemote.Location = new System.Drawing.Point(3, 203);
+            this.btnDemote.Name = "btnDemote";
+            this.btnDemote.Size = new System.Drawing.Size(124, 34);
+            this.btnDemote.TabIndex = 3;
+            this.btnDemote.Text = "Demote";
+            this.btnDemote.UseVisualStyleBackColor = true;
+            this.btnDemote.Click += new System.EventHandler(this.btnDemote_Click);
+            // 
+            // btnPromote
+            // 
+            this.btnPromote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPromote.Location = new System.Drawing.Point(3, 163);
+            this.btnPromote.Name = "btnPromote";
+            this.btnPromote.Size = new System.Drawing.Size(124, 34);
+            this.btnPromote.TabIndex = 2;
+            this.btnPromote.Text = "Promote";
+            this.btnPromote.UseVisualStyleBackColor = true;
+            this.btnPromote.Click += new System.EventHandler(this.btnPromote_Click);
             // 
             // nudLevel
             // 
@@ -194,6 +195,17 @@
             this.nudLevel.Size = new System.Drawing.Size(124, 26);
             this.nudLevel.TabIndex = 8;
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(9, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Level Indicator";
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -202,6 +214,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tbFileLocation, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnBrowse, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnNewFile, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -238,7 +251,7 @@
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(124, 34);
             this.btnBrowse.TabIndex = 2;
-            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.Text = "Open File";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
@@ -251,16 +264,16 @@
             this.pnlFile.Size = new System.Drawing.Size(518, 70);
             this.pnlFile.TabIndex = 2;
             // 
-            // label2
+            // btnNewFile
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(9, 100);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Level Indicator";
+            this.btnNewFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNewFile.Location = new System.Drawing.Point(391, 3);
+            this.btnNewFile.Name = "btnNewFile";
+            this.btnNewFile.Size = new System.Drawing.Size(124, 24);
+            this.btnNewFile.TabIndex = 3;
+            this.btnNewFile.Text = "New File";
+            this.btnNewFile.UseVisualStyleBackColor = true;
+            this.btnNewFile.Click += new System.EventHandler(this.btnNewFile_Click);
             // 
             // MainForm
             // 
@@ -301,6 +314,7 @@
         private System.Windows.Forms.Panel pnlFile;
         private System.Windows.Forms.NumericUpDown nudLevel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnNewFile;
     }
 }
 
