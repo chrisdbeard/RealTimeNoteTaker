@@ -33,6 +33,12 @@ namespace RealTimeNoteTaker
         private void UpdateListView()
         {
             lvEntries.Items.Clear();
+            ColumnHeader header = new ColumnHeader();
+            lvEntries.HeaderStyle = ColumnHeaderStyle.None;
+            lvEntries.Columns.Add(header);
+            lvEntries.View = View.Details;
+
+
             foreach (Entry e in noteController.Entries)
             {
                 ListViewItem lvi = new ListViewItem();

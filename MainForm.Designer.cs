@@ -44,8 +44,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbFileLocation = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
-            this.pnlFile = new System.Windows.Forms.Panel();
             this.btnNewFile = new System.Windows.Forms.Button();
+            this.pnlFile = new System.Windows.Forms.Panel();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlListView.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).BeginInit();
@@ -64,6 +65,8 @@
             // 
             // lvEntries
             // 
+            this.lvEntries.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
             this.lvEntries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvEntries.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lvEntries.HideSelection = false;
@@ -255,15 +258,6 @@
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
-            // pnlFile
-            // 
-            this.pnlFile.Controls.Add(this.tableLayoutPanel2);
-            this.pnlFile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFile.Location = new System.Drawing.Point(0, 0);
-            this.pnlFile.Name = "pnlFile";
-            this.pnlFile.Size = new System.Drawing.Size(518, 70);
-            this.pnlFile.TabIndex = 2;
-            // 
             // btnNewFile
             // 
             this.btnNewFile.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -274,6 +268,20 @@
             this.btnNewFile.Text = "New File";
             this.btnNewFile.UseVisualStyleBackColor = true;
             this.btnNewFile.Click += new System.EventHandler(this.btnNewFile_Click);
+            // 
+            // pnlFile
+            // 
+            this.pnlFile.Controls.Add(this.tableLayoutPanel2);
+            this.pnlFile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFile.Location = new System.Drawing.Point(0, 0);
+            this.pnlFile.Name = "pnlFile";
+            this.pnlFile.Size = new System.Drawing.Size(518, 70);
+            this.pnlFile.TabIndex = 2;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 500;
             // 
             // MainForm
             // 
@@ -315,6 +323,7 @@
         private System.Windows.Forms.NumericUpDown nudLevel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnNewFile;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
 

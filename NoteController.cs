@@ -111,7 +111,8 @@ namespace RealTimeNoteTaker
         {
             Regex rx = new Regex(@"[0 - 9]{ 1,2}:[0 - 9]{ 1,2}:[0 - 9]{ 1,2}.[0 - 9]{ 1,3}",
                 RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            
+            this.Entries.Clear();
+
             if (File.Exists(filePath))
             {
                 this.FilePath = filePath;
