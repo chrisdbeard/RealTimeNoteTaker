@@ -30,6 +30,10 @@ namespace RealTimeNoteTaker
             }
         }
 
+        /// <summary>
+        /// Clears the listview and populates it again with the selected texted added, edited or deleted.
+        /// Controls what you see on the GUI's listview.
+        /// </summary>
         private void UpdateListView()
         {
             lvEntries.Items.Clear();
@@ -37,7 +41,6 @@ namespace RealTimeNoteTaker
             lvEntries.HeaderStyle = ColumnHeaderStyle.None;
             lvEntries.Columns.Add(header);
             lvEntries.View = View.Details;
-
 
             foreach (Entry e in noteController.Entries)
             {
@@ -49,6 +52,12 @@ namespace RealTimeNoteTaker
             }
         }
 
+        /// <summary>
+        /// Allows the use of the UP and DOWN keys to modify which level you would like to select.
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             // TODO arrow keys also move through text box.
@@ -73,6 +82,11 @@ namespace RealTimeNoteTaker
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        /// <summary>
+        /// Allows you to create a new file and select the location you wish to save.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNewFile_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
@@ -88,6 +102,11 @@ namespace RealTimeNoteTaker
 
         }
 
+        /// <summary>
+        /// Opens directory and allows you to select and open an existing file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -106,6 +125,11 @@ namespace RealTimeNoteTaker
             }
         }
 
+        /// <summary>
+        /// Opens the EntryForm to add a Section to your file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddSection_Click(object sender, EventArgs e)
         {
             entryForm = new EntryForm();
@@ -116,6 +140,11 @@ namespace RealTimeNoteTaker
             }            
         }
 
+        /// <summary>
+        /// Opens the EntryForm to add a Note to your file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddNote_Click(object sender, EventArgs e)
         {
             entryForm = new EntryForm();
@@ -126,6 +155,11 @@ namespace RealTimeNoteTaker
             }
         }
 
+        /// <summary>
+        /// Promotes the selected Entry up one level.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPromote_Click(object sender, EventArgs e)
         {
             if (lvEntries.SelectedItems.Count > 0)
@@ -139,6 +173,11 @@ namespace RealTimeNoteTaker
             UpdateListView();
         }
 
+        /// <summary>
+        /// Demotes selected Entry down one level.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDemote_Click(object sender, EventArgs e)
         {
             if (lvEntries.SelectedItems.Count > 0)
@@ -151,6 +190,11 @@ namespace RealTimeNoteTaker
             UpdateListView();
         }
 
+        /// <summary>
+        /// Allows the selected Entry to be edited.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (lvEntries.SelectedItems.Count == 1)
@@ -169,6 +213,11 @@ namespace RealTimeNoteTaker
             }
         }
 
+        /// <summary>
+        /// Removes selected Entry.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (lvEntries.SelectedItems.Count > 0)
@@ -181,6 +230,11 @@ namespace RealTimeNoteTaker
             UpdateListView();
         }
 
+        /// <summary>
+        /// Saves current Entries to file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPublish_Click(object sender, EventArgs e)
         {
             noteController.WriteEntriesToFile();

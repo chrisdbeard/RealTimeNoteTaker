@@ -76,6 +76,11 @@ namespace RealTimeNoteTaker
             }
         }
 
+        /// <summary>
+        /// Allows the selected item to be edited.
+        /// </summary>
+        /// <param name="entry"></param>
+        /// <param name="content"></param>
         public void EditEntry(Entry entry, string content)
         {
             foreach (Entry e in Entries)
@@ -96,6 +101,9 @@ namespace RealTimeNoteTaker
             Entries.Remove(entry);
         }
 
+        /// <summary>
+        /// Writes the data to a file.
+        /// </summary>
         public void WriteEntriesToFile()
         {
             using (StreamWriter sw = new StreamWriter(FilePath))
@@ -107,6 +115,10 @@ namespace RealTimeNoteTaker
             }
         }
 
+        /// <summary>
+        /// Function to read a file and modify the text to become Entries of types Note or Section.
+        /// </summary>
+        /// <param name="filePath"></param>
         public void ReadFile(string filePath)
         {
             Regex rx = new Regex(@"[0 - 9]{ 1,2}:[0 - 9]{ 1,2}:[0 - 9]{ 1,2}.[0 - 9]{ 1,3}",

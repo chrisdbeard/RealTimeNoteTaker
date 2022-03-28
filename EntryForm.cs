@@ -22,6 +22,11 @@ namespace RealTimeNoteTaker
             this.ActiveControl = this.tbUserInput;
         }
 
+        /// <summary>
+        /// Saves current text in the textbox to a property returnText of this class.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;           

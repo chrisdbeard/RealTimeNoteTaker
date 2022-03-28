@@ -21,6 +21,10 @@ namespace RealTimeNoteTaker
             this.ID = id;
         }
 
+        /// <summary>
+        /// Constructor that will parse a line from a selected file.
+        /// </summary>
+        /// <param name="line"></param>
         public Section(string line)
         {
             IDGenerator _IDGenerator = IDGenerator.GetInstance();
