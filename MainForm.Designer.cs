@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddSection = new System.Windows.Forms.Button();
             this.btnAddNote = new System.Windows.Forms.Button();
@@ -42,12 +43,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lvEntries = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiPromote = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDemote = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tbFileLocation = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnNewFile = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -260,6 +267,7 @@
             this.lvEntries.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvEntries.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
+            this.lvEntries.ContextMenuStrip = this.contextMenuStrip1;
             this.lvEntries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvEntries.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lvEntries.ForeColor = System.Drawing.Color.White;
@@ -275,6 +283,53 @@
             // 
             this.columnHeader1.Text = "";
             this.columnHeader1.Width = 500;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiPromote,
+            this.tsmiDemote,
+            this.tsmiEdit,
+            this.tsmiDelete});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 92);
+            // 
+            // tsmiPromote
+            // 
+            this.tsmiPromote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiPromote.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmiPromote.Name = "tsmiPromote";
+            this.tsmiPromote.Size = new System.Drawing.Size(120, 22);
+            this.tsmiPromote.Text = "Promote";
+            this.tsmiPromote.Click += new System.EventHandler(this.tsmiPromote_Click);
+            // 
+            // tsmiDemote
+            // 
+            this.tsmiDemote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiDemote.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmiDemote.Name = "tsmiDemote";
+            this.tsmiDemote.Size = new System.Drawing.Size(120, 22);
+            this.tsmiDemote.Text = "Demote";
+            this.tsmiDemote.Click += new System.EventHandler(this.tsmiDemote_Click);
+            // 
+            // tsmiEdit
+            // 
+            this.tsmiEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmiEdit.Name = "tsmiEdit";
+            this.tsmiEdit.Size = new System.Drawing.Size(120, 22);
+            this.tsmiEdit.Text = "Edit";
+            this.tsmiEdit.Click += new System.EventHandler(this.tsmiEdit_Click);
+            // 
+            // tsmiDelete
+            // 
+            this.tsmiDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmiDelete.Name = "tsmiDelete";
+            this.tsmiDelete.Size = new System.Drawing.Size(120, 22);
+            this.tsmiDelete.Text = "Delete";
+            this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
             // tbFileLocation
             // 
@@ -332,6 +387,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -352,6 +408,11 @@
         private System.Windows.Forms.NumericUpDown nudLevel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnNewFile;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPromote;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDemote;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEdit;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
         private System.Windows.Forms.ListView lvEntries;
         private System.Windows.Forms.ColumnHeader columnHeader1;
     }

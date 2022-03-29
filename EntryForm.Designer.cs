@@ -128,11 +128,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tbUserInput;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.TextBox tbUserInput;
     }
 }

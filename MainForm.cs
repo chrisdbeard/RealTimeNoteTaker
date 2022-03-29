@@ -21,13 +21,6 @@ namespace RealTimeNoteTaker
             InitializeComponent();
             this.noteController = new NoteController();
             this.ActiveControl = this.btnBrowse;
-
-            // DEBUG Code
-            if (Environment.UserName == "heart")
-            {
-                tbFileLocation.Text = @"C:\Users\heart\Documents\Programming\OutputDump\test.rtn";
-                noteController.SetFilePath(@"C:\Users\heart\Documents\Programming\OutputDump\test.rtn");
-            }
         }
 
         /// <summary>
@@ -200,6 +193,7 @@ namespace RealTimeNoteTaker
             if (lvEntries.SelectedItems.Count == 1)
             {
                 entryForm = new EntryForm();
+                entryForm.tbUserInput.Text = lvEntries.SelectedItems[0].Text;
                 if (entryForm.ShowDialog() == DialogResult.OK)
                 {
                     noteController.EditEntry((Entry)lvEntries.SelectedItems[0].Tag, entryForm.returnText);
@@ -239,6 +233,46 @@ namespace RealTimeNoteTaker
         {
             noteController.WriteEntriesToFile();
             MessageBox.Show("Complete", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// RightClick menu item to promote selected item.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmiPromote_Click(object sender, EventArgs e)
+        {
+            btnPromote_Click(sender, e);
+        }
+
+        /// <summary>
+        /// RightClick menu item to demote selected item.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmiDemote_Click(object sender, EventArgs e)
+        {
+            btnDemote_Click(sender, e);
+        }
+
+        /// <summary>
+        /// RightClick menu item to edit selected item.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmiEdit_Click(object sender, EventArgs e)
+        {
+            btnEdit_Click(sender, e);
+        }
+
+        /// <summary>
+        /// RightClick menu item to delete selected item.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmiDelete_Click(object sender, EventArgs e)
+        {
+            btnDelete_Click(sender, e);
         }
     }
 }
